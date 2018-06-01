@@ -1,0 +1,20 @@
+{
+    "name": "jeffersonsouza/search-crawler",
+    "description": "A simple crawler to a simple purpose",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "kriswallsmith/buzz": "^0.17.1"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Souza",
+            "email": "hsinfo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
