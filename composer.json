@@ -9,6 +9,11 @@
     "require-dev": {
         "codeception/codeception": "^2.4"
     },
+    "autoload": {
+        "psr-4": {
+            "Crawler\\": "src"
+        }
+    },
     "license": "MIT",
     "authors": [
         {
