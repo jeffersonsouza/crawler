@@ -4,7 +4,8 @@
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-        "kriswallsmith/buzz": "^0.17.1"
+        "kriswallsmith/buzz": "^0.17.1",
+        "symfony/dom-crawler": "^4.2@dev"
     },
     "require-dev": {
         "codeception/codeception": "^2.4"

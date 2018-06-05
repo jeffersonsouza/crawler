@@ -2,11 +2,14 @@
 
 namespace Crawler;
 
+use Buzz\Browser;
+use Symfony\Component\DomCrawler\Crawler;
+
 /**
  * Class Crawler
  * @package JeffersonSouza\Crawler
  */
-class Crawler
+class SearchCrawler
 {
     public $extractor;
     public function __construct()
@@ -16,8 +19,14 @@ class Crawler
 
     public function search($term)
     {
-        $response = $browser->sendRequest('https://google.com/?q=' + $term);
+        $googleSearch = "https://www.google.com/search?hl=en&q=$term&btnG=Search&gbv=1";
+        $yahooSearch = "https://search.yahoo.com/search?p=$term&fr=yfp-t&fp=1&toggle=1&cop=mss&ei=UTF-8";
 
-        return $response;
+        $usergents = file(__DIR__ . '/../user_agents.txt');
+
+        $browser = new Browser();
+        $response = $browser->get($googleSearch, ['User-Agent' => $usergents[array_rand($usergents, 1)]]);
+
+        return $response->getBody()->getContents();
     }
 }
