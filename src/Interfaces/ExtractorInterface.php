@@ -2,6 +2,9 @@
 
 namespace Crawler\Interfaces;
 
+use Nyholm\Psr7\Response;
+use Symfony\Component\DomCrawler\Crawler;
+
 /**
  * Interface ExtractorInterface
  * @package Crawler\Interfaces
@@ -9,21 +12,9 @@ namespace Crawler\Interfaces;
 interface ExtractorInterface
 {
     /**
-     * @param string $term
+     * @param Response $response
      *
      * @return mixed
      */
-    public function setTerms(string $term);
-
-    /**
-     * @return mixed
-     */
-    public function search();
-
-    /**
-     * @param \HttpResponse $response
-     *
-     * @return mixed
-     */
-    public function processResponse(\HttpResponse $response);
+    public function extract(Response $response);
 }

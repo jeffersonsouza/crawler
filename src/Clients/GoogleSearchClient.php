@@ -1,28 +1,23 @@
 <?php
 
-namespace Crawler;
+namespace Crawler\Clients;
 
-use Crawler\Interfaces\CrawlerInterface;
+use Crawler\CrawlerClient;
+use Crawler\Extractors\GoogleExtractor;
+use Nyholm\Psr7\Response;
 
 /**
- * Class ClawlerClient
+ * Class GoogleSearchClient
  * @package Crawler
  */
-class ClawlerClient implements CrawlerInterface
+class GoogleSearchClient extends CrawlerClient
 {
-
-    public function setTerms(string $term)
+    public function __construct()
     {
-        // TODO: Implement setTerms() method.
+        parent::__construct();
+
+        $this->searchUri = 'https://www.google.com/search?q=%s&btnG=Search&gbv=1';
+        $this->extractor = new GoogleExtractor();
     }
 
-    public function search()
-    {
-        // TODO: Implement search() method.
-    }
-
-    public function processResponse(\DOMNode $elements)
-    {
-        // TODO: Implement processResponse() method.
-    }
 }

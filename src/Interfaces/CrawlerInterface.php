@@ -2,28 +2,25 @@
 
 namespace Crawler\Interfaces;
 
+use Nyholm\Psr7\Response;
+
 /**
  * Interface CrawlerInterface
- * @package JeffersonSouza\Crawler\Interfaces
+ * @package Crawler\Interfaces
  */
 interface CrawlerInterface
 {
     /**
-     * @param string $term
+     * @param $term
      *
      * @return mixed
      */
-    public function setTerms(string $term);
+    public function search($term);
 
     /**
-     * @return mixed
-     */
-    public function search();
-
-    /**
-     * @param \HttpResponse $response
+     * @param Nyholm\Psr7\Response $response
      *
      * @return mixed
      */
-    public function processResponse(\HttpResponse $response);
+    public function processResponse(Response $response);
 }

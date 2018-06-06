@@ -5,9 +5,9 @@ namespace Crawler;
 
 /**
  * Class ClawlerException
- * @package JeffersonSouza\Crawler
+ * @package Crawler
  */
-class ClawlerException
+class CrawlerException
 {
 
 }
